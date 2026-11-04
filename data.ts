@@ -5,9 +5,9 @@ export const profile = {
   affiliation: 'Department of Computer Science and Engineering',
   institution: 'Vivekanand Institute of Professional Studies, Delhi',
   location: 'Delhi, India',
-  email: '', // Add your verified email to enable the contact link.
-  cv: '', // Put your CV at public/cv.pdf, then change this to '/cv.pdf'.
-  scholar: '', linkedin: '', github: '',
+  email: 'bhoop7523@gmail.com', // Add your verified email to enable the contact link.
+  cv: 'cv.pdf', // Put your CV at public/cv.pdf, then change this to '/cv.pdf'.
+  scholar: 'https://scholar.google.com/citations?user=TFkBWgwAAAAJ&hl=en', linkedin: 'https://www.linkedin.com/in/bhoopendra-kumar-15532415a/', github: '',
   intro: 'Researching graph machine learning, anomaly and fraud detection, few-shot node classification, and trustworthy AI.',
 };
 export const interests = [
