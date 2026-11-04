@@ -85,3 +85,38 @@
 @media(max-width:620px){body:has(.cv-cards-screen){overflow:auto}.site-shell:has(.cv-cards-screen){min-height:100dvh;height:auto;overflow:visible}.site-main:has(.cv-cards-screen){overflow:visible}.cv-cards-screen{overflow:visible}.cv-cards-heading{flex-direction:column;gap:10px}.cv-top-actions{max-width:none;justify-content:flex-start}.cv-cards-grid{grid-template-columns:1fr;grid-template-rows:none;gap:12px}.cv-info-card{min-height:170px;padding:18px}.cv-detail-dialog{max-height:85dvh}.cv-info-card strong{font-size:18px}}
 @media(max-height:720px) and (min-width:621px){.cv-cards-screen{gap:10px}.cv-cards-heading .panel-title h1{font-size:39px}.cv-info-card{padding:12px 16px}.cv-card-head{margin-bottom:5px}.cv-card-icon{height:36px;width:36px}.cv-info-card strong{margin:4px 0}.cv-card-more{padding-top:4px}}
 @media(prefers-reduced-motion:reduce){.cv-info-card,.cv-detail-dialog,.cv-dialog-backdrop,.cv-card-icon{animation:none;transition:none}}
+
+/* FINAL THEME OVERRIDES — include the whole file when updating GitHub. */
+.panel-title h1,.hero-copy h1,.cv-cards-heading .panel-title h1{
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-style:italic;font-weight:700;letter-spacing:-.035em;
+  line-height:1.04;color:#124633;
+}
+.panel-title h1{font-size:clamp(43px,4.8vw,75px);margin:11px 0 9px}
+.hero-copy h1{font-size:clamp(48px,5.7vw,88px)}
+.hero-copy h1 em{font-weight:700;color:#04956b}
+.cv-cards-heading .panel-title h1{font-size:clamp(43px,4.7vw,73px)}
+.logo{gap:12px;min-width:fit-content}
+.academic-logo-icon{width:47px;height:47px;display:grid;place-items:center;flex-shrink:0;filter:drop-shadow(0 6px 8px #0b71411c);transition:transform .4s cubic-bezier(.2,.7,.2,1),filter .4s}
+.academic-logo-icon svg{width:100%;height:100%}
+.logo:hover .academic-logo-icon{transform:rotate(-9deg) scale(1.09);filter:drop-shadow(0 7px 12px #0a9d5b45)}
+.logo-wordmark{display:flex;flex-direction:column;gap:2px}
+.logo-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,1.9vw,30px);font-weight:700;letter-spacing:-.7px;line-height:1;color:#07563d;white-space:nowrap}
+.logo-name em{font-style:italic;color:#10a774}
+.logo-tagline{font-family:Manrope,sans-serif;font-size:8px;letter-spacing:1.3px;font-weight:800;color:#759c89;white-space:nowrap}
+/* Make sure CV cards always look like separate cards, never browser-default buttons. */
+.cv-cards-screen .cv-cards-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:clamp(12px,1.4vw,22px);flex:1;min-height:0;width:100%}
+.cv-cards-screen .cv-info-card{appearance:none;-webkit-appearance:none;display:flex;flex-direction:column;align-items:flex-start;text-align:left;width:100%;min-width:0;min-height:0;gap:4px;background:linear-gradient(145deg,#fff 20%,#f1fbf5);border:1px solid #cde8d8;border-radius:22px;padding:clamp(16px,1.8vw,26px);box-shadow:0 15px 35px #085d3215;color:#164d39;cursor:pointer;overflow:hidden;position:relative;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.cv-cards-screen .cv-info-card:hover,.cv-cards-screen .cv-info-card:focus-visible{transform:translateY(-8px);box-shadow:0 22px 45px #07844d2c;border-color:#43bd89}
+.cv-cards-screen .cv-card-head{display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:auto}
+.cv-cards-screen .cv-card-icon{display:grid;place-items:center;width:52px;height:52px;background:#e5f8ed;border:1px solid #b9e5ce;border-radius:15px;color:#078b60;transition:transform .3s}
+.cv-cards-screen .cv-info-card:hover .cv-card-icon{transform:rotate(-8deg) scale(1.12)}
+.cv-cards-screen .cv-card-index{font-size:11px;color:#93b3a0;letter-spacing:1px}
+.cv-cards-screen .cv-card-label{font-size:10px;color:#168a5e;letter-spacing:1.5px;font-weight:800;margin-top:10px}
+.cv-cards-screen .cv-info-card strong{font-family:Manrope,sans-serif;font-size:clamp(17px,1.45vw,23px);font-weight:800;line-height:1.25;margin:4px 0}
+.cv-cards-screen .cv-card-summary{font-size:clamp(11px,1vw,14px);line-height:1.45;color:#668576}
+.cv-cards-screen .cv-card-more{display:flex;align-items:center;gap:7px;margin-top:auto;padding-top:10px;font-size:11px;font-weight:800;color:#098b5d}
+@media(max-width:1000px){.logo-tagline{display:none}.logo-name{font-size:24px}.academic-logo-icon{width:40px;height:40px}}
+@media(max-width:900px){.cv-cards-screen .cv-cards-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr))}}
+@media(max-width:620px){.logo-name{font-size:21px}.academic-logo-icon{width:34px;height:34px}.cv-cards-screen .cv-cards-grid{grid-template-columns:1fr;grid-template-rows:auto}.cv-cards-screen .cv-info-card{min-height:168px}.panel-title h1{font-size:clamp(38px,9vw,52px)}.hero-copy h1{font-size:clamp(41px,9vw,61px)}}
+@media(prefers-reduced-motion:reduce){.academic-logo-icon,.cv-cards-screen .cv-info-card,.cv-cards-screen .cv-card-icon{transition:none}}
