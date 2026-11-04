@@ -1,3 +1,4 @@
+
 {
   "name": "academic-portfolio",
   "version": "1.0.0",
@@ -9,7 +10,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "15.3.3",
+    "next": "15.5.18",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "lucide-react": "^0.468.0"
@@ -18,7 +19,7 @@
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "eslint": "^9.0.0",
-    "eslint-config-next": "15.3.3",
+    "eslint-config-next": "15.5.18",
     "typescript": "^5.0.0"
   }
 }
