@@ -1,14 +1,16 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Kalam:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 /* =========================================
-   PAGE LAYOUT
+   COLOUR AND TYPOGRAPHY
 ========================================= */
 
 .frame {
   width: min(1530px, 100%);
   margin: 0 auto;
-  padding: 20px clamp(22px, 4vw, 65px);
+  padding: clamp(20px, 2.7vh, 28px)
+           clamp(22px, 4vw, 65px);
+
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -31,6 +33,7 @@
   display: flex;
   align-items: center;
   gap: 11px;
+
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
   font-weight: 700;
@@ -49,9 +52,9 @@
 .heading h1 {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: clamp(45px, 4.5vw, 68px);
-  font-weight: 700;
   font-style: italic;
-  line-height: 1;
+  font-weight: 700;
+  line-height: 0.98;
   letter-spacing: -0.035em;
   color: #0a5039;
   margin: 9px 0;
@@ -67,7 +70,7 @@
 }
 
 /* =========================================
-   CARD GRID
+   GRID LAYOUT
 ========================================= */
 
 .group {
@@ -96,6 +99,8 @@
 
 .card {
   position: relative;
+  isolation: isolate;
+
   display: flex;
   flex-direction: column;
 
@@ -119,10 +124,9 @@
 
   color: #123e30;
   text-align: left;
-  font-family: 'Poppins', sans-serif;
 
+  font-family: 'Poppins', sans-serif;
   overflow: hidden;
-  isolation: isolate;
 
   transition:
     transform 0.3s ease,
@@ -130,18 +134,21 @@
     border-color 0.3s ease;
 }
 
-/* Decorative background */
+/* Soft green decoration */
 
 .card::before {
   content: '';
   position: absolute;
   right: -90px;
   top: -120px;
+
   width: 230px;
   height: 230px;
   border-radius: 50%;
+
   border: 40px solid #d6f8e5;
   opacity: 0.25;
+
   pointer-events: none;
   z-index: -1;
 }
@@ -151,14 +158,17 @@
   position: absolute;
   right: -60px;
   bottom: -90px;
+
   width: 180px;
   height: 180px;
   border-radius: 50%;
+
   background: radial-gradient(
     circle,
     rgba(184, 240, 211, 0.45),
     transparent 70%
   );
+
   pointer-events: none;
   z-index: -1;
 }
@@ -169,7 +179,9 @@
 .card:focus-within {
   transform: translateY(-5px);
   border-color: #73ce9b;
-  box-shadow: 0 20px 36px rgba(12, 117, 65, 0.15);
+
+  box-shadow:
+    0 20px 36px rgba(12, 117, 65, 0.15);
 }
 
 /* =========================================
@@ -180,12 +192,13 @@
   display: flex;
   align-items: center;
   gap: 12px;
+
   min-height: 44px;
   width: 100%;
   flex-shrink: 0;
 }
 
-/* Icon */
+/* Card icon */
 
 .icon {
   display: grid;
@@ -213,13 +226,14 @@
   transform: scale(1.08) rotate(-4deg);
 }
 
-/* Category */
+/* Category labels */
 
 .category {
   font-family: 'Poppins', sans-serif;
   font-size: 11px;
   font-weight: 600;
   line-height: 1.4;
+
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #0b9465;
@@ -251,17 +265,24 @@
   margin: 14px 0 16px;
   min-width: 0;
   min-height: 0;
-  flex: 0 0 auto;
 }
 
-/* Uniform card titles */
+/*
+   SCREENSHOT 1: REDACTION-STYLE TITLES
+
+   Cormorant Garamond is used as an
+   available alternative to Redaction.
+*/
 
 .cardBody h3,
 .cardTitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 1.35;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+
+  font-size: 28px;
+  font-weight: 700;
+  font-style: normal;
+
+  line-height: 1.12;
   letter-spacing: -0.3px;
 
   color: #075a40;
@@ -270,14 +291,20 @@
   overflow-wrap: break-word;
 }
 
-/* Uniform descriptions */
+/*
+   SCREENSHOT 2: KALAM DESCRIPTIONS
+*/
 
 .cardBody p,
 .cardDescription {
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  font-family: 'Kalam', cursive;
+
+  font-size: 17px;
   font-weight: 400;
-  line-height: 1.55;
+  font-style: normal;
+
+  line-height: 1.4;
+  letter-spacing: 0;
 
   color: #5f766d;
   margin: 0;
@@ -330,11 +357,9 @@
   border-radius: 9px;
   background: #e7f7ed;
   border: 1px solid #caead6;
-
-  white-space: normal;
 }
 
-/* Card actions */
+/* Action text */
 
 .action {
   display: inline-flex;
@@ -401,14 +426,6 @@
    RESPONSIVE DESIGN
 ========================================= */
 
-/* Desktop */
-
-@media (min-width: 1000px) and (min-height: 850px) {
-  .frame {
-    min-height: calc(100dvh - 130px);
-  }
-}
-
 /* Tablet */
 
 @media (max-width: 900px) {
@@ -419,6 +436,16 @@
   .card {
     min-height: 215px;
     padding: 20px;
+  }
+
+  .cardBody h3,
+  .cardTitle {
+    font-size: 26px;
+  }
+
+  .cardBody p,
+  .cardDescription {
+    font-size: 16px;
   }
 }
 
@@ -441,12 +468,12 @@
 
   .cardBody h3,
   .cardTitle {
-    font-size: 19px;
+    font-size: 23px;
   }
 
   .cardBody p,
   .cardDescription {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .cardFooter {
@@ -459,7 +486,7 @@
   }
 }
 
-/* Accessibility */
+/* Reduced-motion accessibility */
 
 @media (prefers-reduced-motion: reduce) {
   .card,
