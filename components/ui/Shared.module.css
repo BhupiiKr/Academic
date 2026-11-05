@@ -43,6 +43,21 @@
   color: #5f766d;
   margin: 0;
 }
+.category {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0b9465;
+}
+
+.tags span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
 .card .tags span{font-family:'DM Sans',Arial,sans-serif;font-size:11px;font-weight:700;line-height:1.3}
 .card .action{font-family:'DM Sans',Arial,sans-serif;font-size:12px;font-weight:700;line-height:1.3}
 @media(max-width:650px){.card .cardBody h3{font-size:19px}.card .cardBody p{font-size:13px}}
