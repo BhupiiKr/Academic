@@ -11,6 +11,7 @@
 
 
 /* Keep navigation visible when a page scrolls; without changing page layouts. */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 .site{isolation:isolate}
 .header{position:sticky;top:0;z-index:100;flex-shrink:0;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .name {
