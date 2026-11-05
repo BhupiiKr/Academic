@@ -307,57 +307,72 @@
 }
 @media(prefers-reduced-motion:reduce){.site-shell .content-screen .tile,.site-shell .cv-cards-screen .cv-info-card{transition:none!important}}
 
-/* Continuous floating graph waves on the Research Projects page. */
-.site-shell .projects-screen{position:relative;isolation:isolate}
-.site-shell .projects-screen > .panel-title{position:relative;z-index:2}
-.site-shell .projects-screen > .page-items{position:relative;z-index:2}
-.research-wave{position:absolute;top:7px;right:3.5%;width:min(46%,610px);height:165px;pointer-events:none;z-index:1;overflow:visible;opacity:.95}
-.research-wave svg{display:block;width:100%;height:100%;overflow:visible}
-.research-wave-line{transform-box:fill-box;transform-origin:center;animation:wave-drift 6.5s ease-in-out infinite alternate}
-.research-wave .wave-line-two{animation-duration:8.5s;animation-delay:-3s;animation-direction:alternate-reverse}
-.research-wave-fill{animation:wave-glow 5.5s ease-in-out infinite alternate}
-@keyframes wave-drift{0%{transform:translateY(-6px) scaleY(.93)}50%{transform:translateY(4px) scaleY(1.03)}100%{transform:translateY(10px) scaleY(.95)}}
-@keyframes wave-glow{from{opacity:.08}to{opacity:.27}}
-@media(max-width:1000px){.research-wave{width:36%;height:120px;top:12px;opacity:.65}}
-@media(max-width:700px){.research-wave{width:40%;height:95px;top:8px;right:1%;opacity:.33}}
-@media(prefers-reduced-motion:reduce){.research-wave-line,.research-wave-fill{animation:none!important}.research-wave circle{display:none}}
-
-
-/* Shared animated wave artwork in previously unused card-page header space. */
-.site-shell .wave-screen{position:relative;isolation:isolate}
-.site-shell .wave-screen > .research-wave{
-  top:8px;right:clamp(17px,4.5vw,72px);
-  width:min(37%,490px);height:115px;opacity:.53;z-index:0;
+/* Corner-only wave: placed INSIDE the header, never as a flex/grid row. */
+.site-shell .content-screen .panel-title-wave {
+  position:relative;
+  width:100%;
+  max-width:none;
+  min-height:0;
+  isolation:isolate;
+  flex-shrink:0;
+  overflow:hidden;
 }
-.site-shell .wave-screen > :not(.research-wave){position:relative;z-index:1}
-.site-shell .wave-screen.projects-screen > .research-wave{
-  width:min(43%,570px);height:140px;opacity:.76;
+.site-shell .panel-title-wave > .kicker,
+.site-shell .panel-title-wave > h1,
+.site-shell .panel-title-wave > p {
+  position:relative;
+  z-index:2;
 }
-/* The corner waves belong behind card content, never over the labels. */
-.site-shell .content-screen .tile::after,
-.site-shell .cv-cards-screen .cv-info-card::after{
-  content:'';position:absolute;right:-43px;top:-56px;
-  width:178px;height:145px;border-radius:45% 0 0 65%;
-  background:radial-gradient(ellipse at 90% 10%,rgba(47,206,135,.24),transparent 63%),
-    repeating-radial-gradient(ellipse at 102% 3%, transparent 0 16px,rgba(51,194,137,.16) 17px 19px,transparent 20px 34px);
-  pointer-events:none;z-index:0;opacity:.67;
-  transform-origin:top right;animation:card-wave-pulse 9s ease-in-out infinite alternate;
+.site-shell .panel-title-wave > h1 {max-width:72%;}
+.site-shell .panel-title-wave > p {max-width:66%;}
+.site-shell .panel-title-wave > .research-wave {
+  position:absolute !important;
+  display:block !important;
+  inset:0 0 auto auto !important;
+  top:0 !important;
+  right:0 !important;
+  left:auto !important;
+  bottom:auto !important;
+  width:min(37%,460px) !important;
+  height:clamp(80px,10vw,116px) !important;
+  max-height:100% !important;
+  margin:0 !important;
+  padding:0 !important;
+  pointer-events:none;
+  overflow:hidden;
+  opacity:.66;
+  z-index:1;
+  flex:none !important;
 }
-.site-shell .content-screen .tile:nth-child(2n)::after,
-.site-shell .cv-cards-screen .cv-info-card:nth-child(2n)::after{animation-delay:-3s}
-.site-shell .content-screen .tile > *,
-.site-shell .cv-cards-screen .cv-info-card > *{position:relative;z-index:1}
-@keyframes card-wave-pulse{
-  from{transform:rotate(-7deg) scale(.94);opacity:.36}
-  to{transform:rotate(8deg) scale(1.12);opacity:.78}
+.site-shell .panel-title-wave > .research-wave svg {
+  width:100%;height:100%;display:block;overflow:hidden;
 }
-@media(max-width:850px){
-  .site-shell .wave-screen > .research-wave{width:30%;height:80px;opacity:.32}
+.site-shell .panel-title-wave .research-wave-line {
+  transform-box:fill-box;
+  transform-origin:center;
+  animation:corner-wave-drift 7s ease-in-out infinite alternate;
 }
-@media(max-width:620px){
-  .site-shell .wave-screen > .research-wave{width:30%;height:68px;opacity:.24;right:2%}
-  .site-shell .content-screen .tile::after,.site-shell .cv-cards-screen .cv-info-card::after{width:120px;height:100px;opacity:.35}
+.site-shell .panel-title-wave .wave-line-two {animation-duration:9s;animation-delay:-3s;}
+.site-shell .panel-title-wave .research-wave-fill {animation:corner-wave-glow 6s ease-in-out infinite alternate;}
+@keyframes corner-wave-drift {
+  from {transform:translateY(-5px) scaleY(.94)}
+  to {transform:translateY(6px) scaleY(1.04)}
 }
-@media(prefers-reduced-motion:reduce){
-  .site-shell .content-screen .tile::after,.site-shell .cv-cards-screen .cv-info-card::after{animation:none}
+@keyframes corner-wave-glow {from {opacity:.08} to {opacity:.24}}
+/* Make page cards begin immediately after the existing title/toolbar; no reserved wave height. */
+.site-shell .content-screen > .page-items {min-height:0;flex:1;}
+@media (max-width:1050px) {
+  .site-shell .panel-title-wave > h1{max-width:75%;}
+  .site-shell .panel-title-wave > p{max-width:70%;}
+  .site-shell .panel-title-wave > .research-wave{width:29% !important;opacity:.42;}
+}
+@media (max-width:700px) {
+  .site-shell .panel-title-wave > h1,
+  .site-shell .panel-title-wave > p {max-width:100%;}
+  .site-shell .panel-title-wave > .research-wave{display:none !important;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .site-shell .panel-title-wave .research-wave-line,
+  .site-shell .panel-title-wave .research-wave-fill{animation:none!important;}
+  .site-shell .panel-title-wave .research-wave circle{display:none!important;}
 }
