@@ -1,3 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
-:root{--forest:#0a513b;--green:#0b9967;--mint:#e8f8ee;--ink:#1a3a2e;--muted:#61776c;--stroke:#d2e7da;--paper:#f6fbf8;--shadow:0 12px 32px rgba(8,95,57,.075)}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:'DM Sans',Arial,sans-serif;background:var(--paper);color:var(--ink)}body{overflow-x:hidden}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #54c996;outline-offset:3px}
