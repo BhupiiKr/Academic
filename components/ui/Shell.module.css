@@ -269,7 +269,7 @@
   position: relative;
   z-index: 1;
 
-  padding-top: 100px;  /* Changed 74 */
+  padding-top: 90px;  /* Changed 74 */
 }
 
 /* Footer remains in normal document flow */
@@ -281,7 +281,7 @@
 /* Correct positioning on mobile */
 @media (max-width: 650px) {
   .header {
-    height: 66px;
+    height: 80px;
   }
 
   .main {
