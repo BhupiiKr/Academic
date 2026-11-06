@@ -376,3 +376,94 @@
     padding-top: 62px;
   }
 }
+
+/* =========================================
+   REFINED FIXED HEADER DESIGN
+========================================= */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  height: 66px;
+  padding: 0 2.5%;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  /* Soft mint green and white */
+  background: linear-gradient(
+    105deg,
+    rgba(231, 249, 238, 0.98) 0%,
+    rgba(250, 255, 251, 0.98) 55%,
+    rgba(239, 251, 244, 0.98) 100%
+  );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid #bfe3ce;
+  box-shadow: 0 3px 15px rgba(5, 90, 58, 0.07);
+
+  box-sizing: border-box;
+}
+
+/* Thin green accent at bottom */
+.header::after {
+  content: '';
+  position: absolute;
+  left: 2.5%;
+  right: 2.5%;
+  bottom: 0;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(17, 159, 105, 0.35),
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+/* Keep logo compact */
+.logo {
+  flex-shrink: 0;
+}
+
+/* Right-align navigation */
+.nav {
+  margin-left: auto;
+  gap: clamp(12px, 1.3vw, 22px);
+}
+
+/* Consistent Let's talk spacing */
+.contact {
+  margin-left: 12px;
+}
+
+/* Offset main content for fixed navbar */
+.main {
+  padding-top: 66px;
+}
+
+/* Mobile layout */
+@media (max-width: 650px) {
+  .header {
+    height: 62px;
+    padding: 0 16px;
+  }
+
+  .main {
+    padding-top: 62px;
+  }
+}
+
