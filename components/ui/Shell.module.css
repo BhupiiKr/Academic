@@ -72,7 +72,8 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 16px; /* Changed 20 */
+  gap: 20px; /* Changed 20 */
+  
 }
 
 .nav {
@@ -198,7 +199,7 @@
 
   .nav a {
     font-size: 11px;
-    font-weight: bold;  /* Changed 20 */
+   
   }
 }
 
