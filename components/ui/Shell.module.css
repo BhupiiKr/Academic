@@ -24,3 +24,14 @@
   color: #075a40;
   white-space: nowrap;
 }
+.site {
+  position: relative;
+  isolation: isolate;
+}
+
+.header,
+.main,
+.footer {
+  position: relative;
+  z-index: 1;
+}
