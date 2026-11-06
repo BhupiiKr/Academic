@@ -36,3 +36,195 @@
   position: relative;
   z-index: 1;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+/* ====================================
+   IMPROVED NAVIGATION BAR
+==================================== */
+
+/* Bold, stylish website name */
+
+.logo .brandName {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: #07553e;
+}
+
+.logo .brandName em {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 25px;
+  font-weight: 800;
+  font-style: italic;
+  color: #07895e;
+}
+
+/* Move navigation towards right */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(12px, 1.6vw, 27px);
+  margin-left: auto;
+}
+
+/* All navigation links */
+
+.nav a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.5;
+  white-space: nowrap;
+
+  color: #748579;
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease,
+    font-weight 0.25s ease;
+}
+
+/* Underline animation */
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+
+  height: 2px;
+  border-radius: 2px;
+
+  background: #079b69;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+/* Hover: bold, green and slightly raised */
+
+.nav a:hover {
+  color: #067b55;
+  font-weight: 800;
+  transform: translateY(-2px);
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* Current page */
+
+.nav a.active {
+  color: #008e61;
+  font-weight: 800;
+}
+
+/* Let's talk button */
+
+.contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-left: 12px;
+  white-space: nowrap;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact:hover {
+  transform: translateY(-2px);
+  background-color: #e9f9ef;
+  box-shadow: 0 8px 20px rgba(9, 121, 77, 0.12);
+}
+
+/* ====================================
+   RESPONSIVE ADJUSTMENTS
+==================================== */
+
+@media (max-width: 1100px) {
+  .logo .brandName,
+  .logo .brandName em {
+    font-size: 22px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    gap: 8px;
+  }
+
+  .nav a {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 650px) {
+  .logo .brandName,
+  .logo .brandName em {
+    font-size: 21px;
+  }
+
+  .nav {
+    margin-left: 0;
+  }
+
+  .nav a {
+    font-size: 14px;
+  }
+
+  .nav a::after {
+    bottom: -3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav a,
+  .nav a::after,
+  .contact {
+    transition: none;
+  }
+}
+
