@@ -41,7 +41,7 @@ export default function Shell({
     <div className={s.site}>
 
       {showParticles && (
-        <ParticlesBackground opacity={0.35} />
+        <ParticlesBackground opacity={0.55} />
       )}
 
       <header className={s.header}>
