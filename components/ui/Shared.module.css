@@ -60,13 +60,24 @@
   margin: 9px 0;
 }
 
+/* Page descriptions below main headings */
+
 .heading p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #5f766d;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.35;
+  letter-spacing: 0;
+  color: #075a40;
   margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .heading p {
+    font-size: 19px;
+  }
 }
 
 /* =========================================
