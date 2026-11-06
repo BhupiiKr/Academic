@@ -1,0 +1,39 @@
+Academic/
+├── app/
+│   ├── layout.tsx                 # Root Next.js layout
+│   ├── globals.css                # Global colours, typography, resets
+│   ├── page.tsx                   # Home route
+│   └── [slug]/page.tsx            # Other routes in reference project
+├── components/
+│   ├── pages/
+│   │   ├── Home.tsx               # Home structure and behaviour
+│   │   ├── Home.module.css        # Home styling
+│   │   ├── Research.tsx
+│   │   ├── Research.module.css
+│   │   ├── Publications.tsx
+│   │   ├── Publications.module.css
+│   │   ├── Projects.tsx
+│   │   ├── Projects.module.css
+│   │   ├── Teaching.tsx
+│   │   ├── Teaching.module.css
+│   │   ├── About.tsx
+│   │   ├── About.module.css
+│   │   ├── CV.tsx
+│   │   ├── CV.module.css
+│   │   ├── Blog.tsx
+│   │   ├── Blog.module.css
+│   │   ├── Contact.tsx
+│   │   └── Contact.module.css
+│   └── ui/
+│       ├── Shell.tsx              # Navbar, footer, page wrapper
+│       ├── Shell.module.css       # Navbar, footer, layout CSS
+│       ├── Shared.tsx             # Reusable cards, headings, grids
+│       ├── Shared.module.css      # Shared cards, headings, grids CSS
+│       ├── Scene.tsx              # Scene / globe (if retained)
+│       ├── Scene.module.css
+│       └── ParticlesBackground.tsx # Added in later edits, if present
+├── data.ts                        # Central portfolio content
+├── public/
+│   └── cv.pdf                     # CV PDF, if present
+├── package.json                   # Dependencies and scripts
+└── package-lock.json              # Locked npm dependencies
