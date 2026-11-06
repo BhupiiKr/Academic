@@ -43,10 +43,12 @@
   gap: 20px;
 
   background: linear-gradient(
-    105deg,
-    rgba(231, 249, 238, 0.98) 0%,
-    rgba(250, 255, 251, 0.98) 55%,
-    rgba(239, 251, 244, 0.98) 100%
+  105deg,
+  #D7F0E1 0%,
+  #EAF8EF 45%,
+  #F8FCF9 75%,
+  #DFF4E8 100%
+);
   );
 
   border-bottom: 1px solid #bfe3ce;
