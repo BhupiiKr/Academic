@@ -22,8 +22,7 @@ const routes = [
   ['teaching', 'Teaching'],
   ['about', 'About'],
   ['cv', 'CV'],
-  ['blog', 'Blog'],
-  ['contact', 'Contact']
+  ['blog', 'Blog']
 ];
 
 export default function Shell({
@@ -35,36 +34,37 @@ export default function Shell({
 }) {
   const [open, setOpen] = useState(false);
 
-  // Show particles on all pages except Home and About.
   const showParticles =
     active !== 'home' && active !== 'about';
 
   return (
     <div className={s.site}>
 
-      {/* Animated graph background */}
       {showParticles && (
         <ParticlesBackground opacity={0.35} />
       )}
 
-      {/* Existing header */}
       <header className={s.header}>
+
+        {/* Logo and name */}
         <Link
           className={s.logo}
           href="/"
           aria-label="Bhoopendra Kumar home"
         >
           <span className={s.symbol}>
-            <GraduationCap size={26} />
+            <GraduationCap size={27} />
           </span>
 
-          <span>
+          <span className={s.brandName}>
             Bhoopendra <em>Kumar</em>
           </span>
         </Link>
 
+        {/* Mobile menu */}
         <button
           className={s.menu}
+          type="button"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen(!open)}
@@ -72,6 +72,7 @@ export default function Shell({
           {open ? <X /> : <Menu />}
         </button>
 
+        {/* Navigation */}
         <nav
           className={`${s.nav} ${open ? s.navOpen : ''}`}
           aria-label="Main navigation"
@@ -81,6 +82,7 @@ export default function Shell({
               key={key}
               href={key === 'home' ? '/' : `/${key}`}
               className={active === key ? s.active : ''}
+              aria-current={active === key ? 'page' : undefined}
               onClick={() => setOpen(false)}
             >
               {label}
@@ -88,18 +90,21 @@ export default function Shell({
           ))}
         </nav>
 
-        <Link className={s.contact} href="/contact">
+        {/* Contact button */}
+        <Link
+          className={s.contact}
+          href="/contact"
+        >
           Let's talk
-          <ArrowUpRight size={15} />
+          <ArrowUpRight size={16} />
         </Link>
+
       </header>
 
-      {/* Existing page content */}
       <main className={s.main}>
         {children}
       </main>
 
-      {/* Existing footer */}
       <footer className={s.footer}>
         <span>
           © {new Date().getFullYear()} {profile.name}
@@ -110,7 +115,9 @@ export default function Shell({
         </span>
 
         <span>
-          {routes.find(([key]) => key === active)?.[1]}
+          {active === 'contact'
+            ? 'Contact'
+            : routes.find(([key]) => key === active)?.[1]}
         </span>
       </footer>
 
