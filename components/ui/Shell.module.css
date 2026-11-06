@@ -27,6 +27,7 @@
 .site {
   position: relative;
   isolation: isolate;
+  background: #f6fcf8;
 }
 
 .header,
